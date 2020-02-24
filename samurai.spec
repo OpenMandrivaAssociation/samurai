@@ -1,6 +1,6 @@
 Summary:	ninja-compatible build tool written in C
 Name:		samurai
-Version:	0.6
+Version:	1.0
 Release:	1
 License:	APL2+
 Group:		Development/Other
