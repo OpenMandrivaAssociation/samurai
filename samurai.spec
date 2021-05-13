@@ -1,6 +1,6 @@
 Summary:	ninja-compatible build tool written in C
 Name:		samurai
-Version:	1.0
+Version:	1.2
 Release:	1
 License:	APL2+
 Group:		Development/Other
@@ -17,10 +17,13 @@ C99 with a focus on simplicity, speed, and portability.
 %build
 %global optflags %{optflags} -O3
 
-%make_build CC="%{__cc}" CFLAGS="%{optflags}" LDFLAGS="%{optflags}"
+%make_build CC="%{__cc}" CFLAGS="%{optflags}" LDFLAGS="%{build_ldflags}"
 
 %install
 %make_install PREFIX="%{_prefix}"
+
+# (tpg) enable when replacing ninja
+#ln -sf %{_bindir}/samu %{buildroot}%{_bindir}/ninja
 
 %files
 %{_bindir}/samu
